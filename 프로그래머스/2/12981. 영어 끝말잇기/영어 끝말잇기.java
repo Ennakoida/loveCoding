@@ -10,23 +10,22 @@ class Solution {
             String start = words[i].substring(0, 1); // 현 단어 시작 문자
             
             if(!end.equals(start)) {
-                personNum = (i+1) % n == 0 ? n : (i+1) % n;
-                turnNum = (i/n) + 1;
                 fail = true;
-                break;
-            }        
-            
-            // 중복 판별
-            for(int j = 0; j < i; j++) {
-                if(words[i].equals(words[j])) {
-                    personNum = (i+1) % n == 0 ? n : (i+1) % n;
-                    turnNum = (i/n) + 1;
-                    fail = true;
-                    break;
-                }
+            } else {
+                // 중복 판별
+                for(int j = 0; j < i; j++) {
+                    if(words[i].equals(words[j])) {
+                        fail = true;
+                        break;
+                    }
+                } 
             }
             
-            if(fail) break;
+            if(fail) {
+                personNum = (i % n) + 1;
+                turnNum = (i / n) + 1;
+                break;
+            }
         }
         
         answer[0] = personNum;
