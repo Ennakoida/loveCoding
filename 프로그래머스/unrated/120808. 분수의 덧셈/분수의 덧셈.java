@@ -6,9 +6,10 @@ class Solution {
         int endNum = Math.min(numerator, denominator);
         int max = 1;
         
-        for(int i = 1; i <= endNum; i++) {
+        for(int i = endNum; i > 0; i--) {
             if(numerator % i == 0 && denominator % i == 0) {
                 max = i;
+                break;
             }
         }
         
