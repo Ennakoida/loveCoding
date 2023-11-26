@@ -1,12 +1,36 @@
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int solution(int[] array) {
-        List<Map.Entry<Integer, List<Integer>>> list = new ArrayList<>(Arrays.stream(array).boxed().collect(Collectors.groupingBy(o -> o)).entrySet()).stream().sorted((t0, t1) -> Integer.compare(t1.getValue().size(), t0.getValue().size())).collect(Collectors.toList());
-        return list.size() > 1 && list.get(0).getValue().size() - list.get(1).getValue().size() == 0 ? -1 : list.get(0).getKey();
+        int answer = 0, max = 0, cnt = 0;
+        int arr[] = new int[1000];
+        
+        if(array.length == 1) {
+            return array[0];
+        }
+        
+        for(int i = 0; i < array.length; i++) {
+            arr[array[i]]++;
+        }
+        
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] > max) {
+                answer = i;
+                max = arr[i];
+            } 
+        }
+        
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] == max) {
+                cnt++;
+            }
+            
+            if(cnt > 1) {
+                answer = -1;
+                break;
+            }
+        }
+        
+        return answer;
     }
 }
