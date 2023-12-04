@@ -1,7 +1,6 @@
 class Solution {
     public int solution(int n) {
         int answer = 0;
-        int cnt = 0;
         
         if(n < 4) return answer;
         
