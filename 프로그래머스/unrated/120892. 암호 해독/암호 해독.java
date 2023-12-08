@@ -3,7 +3,7 @@ class Solution {
         String answer = "";
         
         for(int i = code - 1; i < cipher.length(); i += code) {
-            answer += String.valueOf(cipher.charAt(i));
+            answer += cipher.substring(i, i + 1);
         }
         
         return answer;
