@@ -6,10 +6,9 @@ class Solution {
         Arrays.sort(array);
         
         for(int item : array) {
-            if(item > height) break;
-            order++;
+            if(item > height) order++;
         }
         
-        return array.length - order;
+        return order;
     }
 }
