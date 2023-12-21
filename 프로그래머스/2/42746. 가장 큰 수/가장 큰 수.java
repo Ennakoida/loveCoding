@@ -9,12 +9,9 @@ class Solution {
             n2Str[i] = String.valueOf(numbers[i]);
         }
 
-        Arrays.sort(n2Str, new Comparator<String>() {
-            @Override
-            public int compare(String s1, String s2) {
-                String concat1 = s1 + s2;
-                String concat2 = s2 + s1;
-                return concat2.compareTo(concat1);
+         Arrays.sort(n2Str, new Comparator<String>() {
+            public int compare(String o1, String o2) {
+                return (o2 + o1).compareTo(o1 + o2);
             }
         });
 
