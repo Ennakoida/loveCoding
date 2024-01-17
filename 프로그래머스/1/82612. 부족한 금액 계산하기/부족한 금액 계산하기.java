@@ -8,8 +8,6 @@ class Solution {
             totalPrice += (price * cnt);
         }
         
-        if(totalPrice <= money) return 0;
-        
-        return totalPrice - money;
+        return totalPrice <= money ? 0 : totalPrice - money;
     }
 }
