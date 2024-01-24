@@ -10,9 +10,6 @@ class Solution {
             hSizes[i] = Math.min(sizes[i][0], sizes[i][1]);
         }
         
-        Arrays.sort(wSizes);
-        Arrays.sort(hSizes);
-        
-        return wSizes[sizes.length - 1] * hSizes[sizes.length - 1];
+        return Arrays.stream(wSizes).max().getAsInt() * Arrays.stream(hSizes).max().getAsInt();
     }
 }
