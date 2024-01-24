@@ -10,6 +10,9 @@ class Solution {
             hSizes[i] = Math.min(sizes[i][0], sizes[i][1]);
         }
         
-        return Arrays.stream(wSizes).max().getAsInt() * Arrays.stream(hSizes).max().getAsInt();
+        int maxW = Arrays.stream(wSizes).max().getAsInt();
+        int maxH = Arrays.stream(hSizes).max().getAsInt();
+        
+        return maxW * maxH;
     }
 }
