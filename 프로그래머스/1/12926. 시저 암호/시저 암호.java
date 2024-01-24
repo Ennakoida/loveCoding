@@ -1,18 +1,19 @@
 class Solution {
     public String solution(String s, int n) {
         String answer = "";
+        char sChar = ' ';
         
         for(int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == ' ') answer += " ";
+            sChar = s.charAt(i);
+            if(sChar == ' ') 
+                answer += " ";
             else {
-                if((s.charAt(i) + n > 90 && s.charAt(i) < 97) || s.charAt(i) + n > 122) 
-                    answer += (char)(s.charAt(i) + n - 26);
+                if((sChar + n > 90 && sChar < 97) || sChar + n > 122) 
+                    answer += (char)(sChar + n - 26);
                 else 
-                    answer += (char)(s.charAt(i) + n);
+                    answer += (char)(sChar + n);
             }
         }
-        
-        System.out.println(answer);
         
         return answer;
     }
