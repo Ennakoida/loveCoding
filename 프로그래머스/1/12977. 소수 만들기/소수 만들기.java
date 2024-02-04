@@ -9,7 +9,7 @@ class Solution {
                     sum = nums[i] + nums[j] + nums[k];
                     check = true;
 
-                    for (int l = 2; l < sum; l++) {
+                    for (int l = 2; l <= Math.sqrt(sum); l++) {
                         if (sum % l == 0) {
                             check = false;
                             break;
