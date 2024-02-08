@@ -24,9 +24,9 @@ class Solution {
 		Collections.sort(keys, (v1, v2) -> (map.get(v2).compareTo(map.get(v1)))); 
         
         int i = 0;
-		for (Integer key : keys) {
+        for (Integer key : keys) {
             answer[i++] = key;
-		}
+        }
         
         return answer;
     }
