@@ -8,9 +8,7 @@ class Solution {
         
         for(String bab : babbling) {
             for(String noword : unspeakable) {
-                if(bab.contains(noword)) {
-                    bab = bab.replaceAll(noword, "1");
-                }
+                bab = bab.replaceAll(noword, "1");
             }
             
             for(String word : speakable) {
